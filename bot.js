@@ -45,7 +45,7 @@ bot.on('text', async (msg) => {
 			return item.chatId === chatId
 		})
 		if (liked.length === 0) {
-			await bot.sendMessage(chatId, "You have not liked photos!").then()
+			await bot.sendMessage(chatId, "Sizga yoqgan rasmlar xozircha yo'q!").then()
 		} else {
 			for (let likedElement of liked) {
 				let form = new FormData()
@@ -65,7 +65,7 @@ bot.on('text', async (msg) => {
 			return item.chatId === chatId
 		})
 		if (disliked.length === 0) {
-			await bot.sendMessage(chatId, "You have not disliked photos!").then()
+			await bot.sendMessage(chatId, "Sizga yoqmagan rasmlar xozircha yo'q!").then()
 		} else {
 			for (let dislikedElement of disliked) {
 				let form = new FormData()
@@ -81,7 +81,7 @@ bot.on('text', async (msg) => {
 	let result = await fetch(`https://pixabay.com/api/?key=25631478-dfce721a8aa233d638902ca6c&q=${text}&image_type=photo&pretty=true`)
 	result = await result.json()
 	if(result.hits.length === 0) {
-		await bot.sendMessage(chatId, 'Hech qanday rasm tapilmadi')
+		await bot.sendMessage(chatId, 'Rasm tapilmadi')
 		return
 	}
 
